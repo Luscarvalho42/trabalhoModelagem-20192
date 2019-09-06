@@ -6,6 +6,5 @@ O desenvolvimento será feito utilizando o framework open source *Ionic*.
 ### Grupo:
 - Alvaro Barbosa
 - Emanuelle Herran
-- Franciscone Luiz
 - Gabriel Henrique
 - Lucas de Carvalho
