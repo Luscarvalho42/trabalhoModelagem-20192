@@ -11,3 +11,5 @@ O desenvolvimento será feito utilizando o framework open source *Ionic*.
 
 ### Projeto:
 [Link para o protótipo](https://xd.adobe.com/spec/6406fb24-fc1d-458a-75fa-94f4b4cbd250-1237/)
+
+[Link para o Documento de Requisitos](https://drive.google.com/file/d/168CZolhgox_47IOcMQTM8kVkK85hlCuE/view?usp=sharing)
