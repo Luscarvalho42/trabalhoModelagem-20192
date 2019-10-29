@@ -1,13 +1,14 @@
-<ion-header style="background-color: #0060BF;">
+<ion-header>
   <ion-searchbar></ion-searchbar>
 </ion-header>
 
-<ion-content><ion-card class="welcome-card" style="border-radius: 20px;">
-  <img src="/assets/shapes.svg" alt="" />
-  <ion-card-header style="text-align: center;">
-    <ion-card-title>
-      Setembro Amarelo: “Bem me quero, bem te quero”
-    </ion-card-title>
-  </ion-card-header>
-</ion-card>
+<ion-content>
+  <ion-card style="border-radius: 20px;">
+    <img class="imgCapa" src="{{noticia.capa}}"/>
+    <ion-card-header style="text-align: center;">
+      <ion-card-title>
+        {{noticia.titulo}}
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
