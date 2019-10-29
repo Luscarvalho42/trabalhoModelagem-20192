@@ -1,10 +1,16 @@
+import { ModeloPublicador } from './publicador.model';
+import { ModeloTopico } from './topico.model';
+import { ModeloComentario } from './comentario.model';
+
 export class ModeloNoticia {
     constructor(
-        public publicador: string,
+        public capa: string,
+        public publicador: ModeloPublicador,
         public titulo: string,
         public likes: number,
+        public artigo: string,
+        public topicos: ModeloTopico[],
         public data: Date,
-        public artigo: string, 
-        public capa: string,
+        public comentarios: ModeloComentario[],
     ) {}
 }
