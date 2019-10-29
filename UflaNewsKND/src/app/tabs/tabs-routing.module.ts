@@ -13,7 +13,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../tabPerfil/tab1.module').then(m => m.Tab1PageModule)
+              import('../tabPerfil/tabPerfil.module').then(m => m.TabPerfilPageModule)
           }
         ]
       },
@@ -23,7 +23,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../tabFeed/tab2.module').then(m => m.Tab2PageModule)
+              import('../tabFeed/tabFeed.module').then(m => m.TabFeedPageModule)
           }
         ]
       },
@@ -33,7 +33,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../tabInscricoes/tab3.module').then(m => m.Tab3PageModule)
+              import('../tabInscricoes/tabInscricoes.module').then(m => m.TabInscricoesPageModule)
           }
         ]
       },
