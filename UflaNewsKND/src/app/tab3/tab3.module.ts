@@ -3,15 +3,15 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TabPerfilPage } from './tabPerfil.page';
+import { Tab3Page } from './tab3.page';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: TabPerfilPage }])
+    RouterModule.forChild([{ path: '', component: Tab3Page }])
   ],
-  declarations: [TabPerfilPage]
+  declarations: [Tab3Page]
 })
-export class TabPerfilPageModule {}
+export class Tab3PageModule {}

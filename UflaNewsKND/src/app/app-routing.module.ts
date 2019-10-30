@@ -5,12 +5,18 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  }
+  },
+  { path: 'feed', loadChildren: './telas/feed/feed.module#FeedPageModule' },
+  { path: 'perfil', loadChildren: './telas/perfil/perfil.module#PerfilPageModule' },
+  { path: 'inscricoes', loadChildren: './telas/inscricoes/inscricoes.module#InscricoesPageModule' },
+  { path: 'boletim/:id', loadChildren: './telas/boletim/boletim.module#BoletimPageModule' }
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {}

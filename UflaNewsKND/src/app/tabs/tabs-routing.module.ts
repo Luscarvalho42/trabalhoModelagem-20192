@@ -8,45 +8,45 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'Perfil',
+        path: 'tab1',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tabPerfil/tabPerfil.module').then(m => m.TabPerfilPageModule)
+              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
           }
         ]
       },
       {
-        path: 'Feed',
+        path: 'tab2',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tabFeed/tabFeed.module').then(m => m.TabFeedPageModule)
+              import('../telas/feed/feed.module').then(m => m.FeedPageModule)
           }
         ]
       },
       {
-        path: 'Inscricoes',
+        path: 'tab3',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tabInscricoes/tabInscricoes.module').then(m => m.TabInscricoesPageModule)
+              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/Feed',
+        redirectTo: '/tabs/tab2',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/Feed',
+    redirectTo: '/tabs/tab2',
     pathMatch: 'full'
   }
 ];
