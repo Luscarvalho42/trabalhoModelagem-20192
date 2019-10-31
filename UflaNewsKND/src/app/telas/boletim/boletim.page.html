@@ -2,7 +2,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="tabs/news"></ion-back-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Voltar</ion-title>
   </ion-toolbar>
@@ -43,4 +43,8 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <ion-card *ngFor="let t of listaTopicos">
+    <ion-title>{{t.titulo}}</ion-title>
+  </ion-card>
 </ion-content>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModeloBoletim } from 'src/app/model/boletim.model';
-import { ServicoBoletim } from 'src/app/servicos/boletim.service';
+import { ServicoBoletim } from 'src/app/services/boletim.service';
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 
 @Component({

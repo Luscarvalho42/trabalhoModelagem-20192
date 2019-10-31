@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>perfil</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div style="padding-left: 30px;">
+<h3>Perfil</h3>
+</div>
 
 <ion-content>
-
+  <ion-card ion-card *ngIf="usuarioLogado">
+    <ion-title>{{usuarioLogado.nome}}</ion-title>
+    <ion-label>Não é meu nome</ion-label>
+    <ion-title>{{usuarioLogado.email}}</ion-title>
+    <ion-title>Incrições: {{usuarioLogado.inscricoes.length}}</ion-title>
+    <ion-button (click)="onClick()" fill="solid" shape="round" color="light">
+      Alterar email
+    </ion-button>
+    <br>
+    <ion-button (click)="onClick()" fill="solid" shape="round" color="light">
+      Alterar senha
+    </ion-button>
+  </ion-card>
 </ion-content>

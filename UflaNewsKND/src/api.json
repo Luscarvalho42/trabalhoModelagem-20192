@@ -31,6 +31,7 @@
       "publicadorImagem": "https://ufla.br/images/noticias/2018/selos/selo-praec.jpg"
     }
   ],
+
   "comentario":[
     {
       "id": 1,
@@ -39,30 +40,48 @@
       "comentario": ""
     }
   ],
+
   "topico": [
     {
       "id": 1,
-      "idBoletim": "",
-      "titulo": "",
-      "publicadoEm": ""
+      "titulo": "Ações da camapanha: 18/09",
+      "conteudo": "Roda de conversa no Centro de convivência, das 12h às 13h"
+    },
+    {
+      "id": 1,
+      "titulo": "Ações da camapanha: 28/09",
+      "conteudo": "Palestra sobre suicídio e depressão, Anfiteatro do Departamento de Agricultura (DAG), das 9h às 10h30"
+    },
+    {
+      "id": 3,
+      "titulo": "Ações da camapanha: 28/09",
+      "conteudo": "Palestra sobre suicídio e depressão, Anfiteatro do Departamento de Agricultura (DAG), das 9h às 10h30"
     }
   ],
+
   "publicador": [
     {
       "id": 1,
-      "noticias": ["", "", ""],
-      "foto": "",
-      "nome": ""
-    }
+      "noticias": [1, 2],
+      "foto": "https://images.educamaisbrasil.com.br/content/superior/instituicao/logo/g/ufla.png",
+      "nome": "Portal UFLA"
+    },
+    {
+      "id": 1,
+      "noticias": [3],
+      "foto": "https://ufla.br/images/noticias/2018/selos/selo-praec.jpg",
+      "nome": "PRAEC"
+    }    
   ],
+
   "usuario": [
     {
       "id": 1,
-      "nome": "",
-      "email": "",
-      "senha": "",
+      "nome": "Lucas de Carvalho Felizardo",
+      "email": "lucasdec@gmail.com",
+      "senha": "123456",
       "likes": ["", "", ""],
-      "inscricoes": ["", "", ""] 
+      "inscricoes": [1] 
     }
   ]
 }
