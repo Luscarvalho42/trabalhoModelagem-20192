@@ -5,15 +5,10 @@
 
 <ion-content>
   <ion-card *ngFor="let b of listaBoletim" [routerLink]="['/boletim', b.id]">
+    <img src="{{b.capa}}"/>
     <ion-card-header>
-      <ion-card-title>
-          {{b.titulo}}
-      </ion-card-title>
-
-      <ion-card-subtitle>
-        {{b.likes}} likes | Publicado em: {{b.publishedAt}}
-      </ion-card-subtitle>
+      <ion-card-title>{{b.titulo}}</ion-card-title>
+      <ion-label>{{b.likes}} likes | {{b.publicadorNome}}</ion-label>
     </ion-card-header>
-    <ion-label>{{b.id}}</ion-label>
   </ion-card>
 </ion-content>

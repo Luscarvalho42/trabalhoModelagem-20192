@@ -1,0 +1,68 @@
+{
+  "boletim": [
+    {
+      "id": 1,
+      "capa": "https://ufla.br/images/noticias/2019/10_out/embalagem_tomate_DCA.jpg",
+      "titulo": "Pesquisa utiliza casca de tomate para produzir embalagem antioxidante",
+      "publicadoEm": "22/10/2019",
+      "conteudo": "Na UFLA, diversos laboratórios de diferentes cursos têm buscado em fontes renováveis novas opções de embalagens biodegradáveis, sejam elas ativas, inteligentes ou blendas. Há mais de 13 anos, novas embalagens para alimentos têm sido alvo de diversas pesquisas no Laboratório de Embalagens do Departamento de Ciência dos Alimentos (DCA). Para a professora Soraia Vilela Borges, no futuro as embalagens  deverão ser as “blendas ou compósitos ativos e inteligentes”, ou seja, embalagens que trazem consigo diversas funções e materiais com propriedades antimicrobianas e resistência térmica, por exemplo.",
+      "likes": 42,
+      "publicadorNome": "Portal UFLA",
+      "publicadorImagem": "https://images.educamaisbrasil.com.br/content/superior/instituicao/logo/g/ufla.png"
+    },
+    {
+      "id": 2,
+      "capa": "https://ufla.br/images/noticias/2019/selos/pas_2019.JPG",
+      "titulo": "Abertas até 27/10 as inscrições para formação da equipe de aplicação do PAS/UFLA 2019",
+      "publicadoEm": "24/10/2019",
+      "conteudo": "A Diretoria de Processos Seletivos da Universidade Federal de Lavras (Dips/UFLA) comunica que já estão abertas as inscrições para interessados em aplicar as provas do Processo de Avaliação Seriada (PAS 2019/UFLA). A aplicação ocorrerá nos dias 23/11 e 24/11",
+      "likes": 63,
+      "publicadorNome": "Portal UFLA",
+      "publicadorImagem": "https://images.educamaisbrasil.com.br/content/superior/instituicao/logo/g/ufla.png"
+    },
+    {
+      "id": 3,
+      "capa": "https://i0.wp.com/praec.ufla.br/images/site-pib-ufla/2019/10/Banner-novo-edital.jpg?ssl=1",
+      "titulo": "Novo edital do Proat",
+      "publicadoEm": "24/10/2019",
+      "conteudo": "O Setor de Bolsas Institucionais da Praec informa a publicação do Edital Complementar do Programa de Aprendizado Técnico – PROAT. Estão sendo ofertadas 50 vagas reservadas para estudantes em situação de vulnerabilidade socioeconômica.",
+      "likes": 27,
+      "publicadorNome": "PRAEC",
+      "publicadorImagem": "https://ufla.br/images/noticias/2018/selos/selo-praec.jpg"
+    }
+  ],
+  "comentario":[
+    {
+      "id": 1,
+      "idBoletim": "",
+      "usuario": "",
+      "comentario": ""
+    }
+  ],
+  "topico": [
+    {
+      "id": 1,
+      "idBoletim": "",
+      "titulo": "",
+      "publicadoEm": ""
+    }
+  ],
+  "publicador": [
+    {
+      "id": 1,
+      "noticias": ["", "", ""],
+      "foto": "",
+      "nome": ""
+    }
+  ],
+  "usuario": [
+    {
+      "id": 1,
+      "nome": "",
+      "email": "",
+      "senha": "",
+      "likes": ["", "", ""],
+      "inscricoes": ["", "", ""] 
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModeloBoletim } from 'src/app/model/boletim.model';
-import { BoletimService } from 'src/app/servicos/boletim.service';
+import { ServicoBoletim } from 'src/app/servicos/boletim.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -12,15 +12,14 @@ import { ActivatedRoute } from '@angular/router';
 export class BoletimPage implements OnInit {
 
   boletimAtual: ModeloBoletim;
+  boletimId: number;
 
-  constructor(public activatedRoute: ActivatedRoute, public servicoBoletim: BoletimService) { 
-    const boletimId: number = 
-      parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
-    
-      this.boletimAtual = this.servicoBoletim.getPeloId(boletimId);
+  constructor(public activatedRoute: ActivatedRoute, public servicoBoletim: ServicoBoletim) {
   }
 
-  ngOnInit() {
-  }
+  async ngOnInit() {
+    this.boletimId = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
 
+    this.boletimAtual = await this.servicoBoletim.pegarPeloId(this.boletimId);
+  }
 }
