@@ -28,9 +28,6 @@ export class PublicadorPage implements OnInit {
   async ngOnInit() {
     this.publicadorId = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
     this.publicadorAtual = await this.servicoPublicador.pegarPeloId(this.publicadorId);
-    console.log("aaaaaaaaaaa");
-    var a = await this.servicoBoletim.pegarPeloId(1);
-    console.log("bbbbbbbbbbb");
     //this.listaBoletins = await this.listar();
   }
 /**

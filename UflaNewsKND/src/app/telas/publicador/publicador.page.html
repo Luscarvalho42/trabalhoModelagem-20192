@@ -7,7 +7,33 @@
 </ion-header>
 
 <ion-content *ngIf="publicadorAtual">
-  <ion-title>
-    {{publicadorAtual.nome}}
-  </ion-title>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <div class="centralizar">
+          <img class="imgIcone" style="width: 100px; height: 100px;" src="{{publicadorAtual.foto}}">
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <div class="txtC">
+          <ion-title>
+            {{publicadorAtual.nome}}
+          </ion-title>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card class="cartao" style="height: 100px;">
+    <ion-title class="txtC">
+      Era pra ter um boletim aqui
+    </ion-title>
+  </ion-card>
+  <ion-card class="cartao" style="height: 100px;">
+    <ion-title class="txtC">
+      Era pra ter outro aqui
+    </ion-title>
+  </ion-card>
 </ion-content>
