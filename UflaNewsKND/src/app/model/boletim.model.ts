@@ -6,7 +6,8 @@ export class ModeloBoletim {
         public publicadoEm: string,
         public conteudo: string,
         public likes: number,
-        public publicadorNome: string,
         public publicadorImagem: string,
+        public publicadorNome: string,
+        public publicadorId: number
     ) {}
 } 

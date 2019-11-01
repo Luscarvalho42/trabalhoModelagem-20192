@@ -37,7 +37,7 @@
 
     <ion-row align-items-center>
       <ion-col>
-        <div class="centralizar">
+        <div class="centralizar"  [routerLink]="['/publicador', boletimAtual.publicadorId]">
           <img class="imgIcone" src="{{boletimAtual.publicadorImagem}}"/>
         </div>
       </ion-col>

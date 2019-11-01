@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'feed', loadChildren: './telas/feed/feed.module#FeedPageModule' },
   { path: 'perfil', loadChildren: './telas/perfil/perfil.module#PerfilPageModule' },
   { path: 'inscricoes', loadChildren: './telas/inscricoes/inscricoes.module#InscricoesPageModule' },
-  { path: 'boletim/:id', loadChildren: './telas/boletim/boletim.module#BoletimPageModule' }
+  { path: 'boletim/:id', loadChildren: './telas/boletim/boletim.module#BoletimPageModule' },
+  { path: 'publicador/:id', loadChildren: './telas/publicador/publicador.module#PublicadorPageModule' }
 ];
 
 @NgModule({

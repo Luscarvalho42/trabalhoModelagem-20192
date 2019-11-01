@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModeloBoletim } from 'src/app/model/boletim.model';
 import { ServicoBoletim } from 'src/app/services/boletim.service';
-import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 
 @Component({
   selector: 'app-feed',
@@ -9,12 +8,11 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
   styleUrls: ['./feed.page.scss'],
 })
 
-
 export class FeedPage implements OnInit {
 
   listaBoletim: ModeloBoletim[];
 
-  constructor(public boletins: ServicoBoletim) {
+  constructor(public boletins: ServicoBoletim,) {
   }
 
   listar(event: any) {

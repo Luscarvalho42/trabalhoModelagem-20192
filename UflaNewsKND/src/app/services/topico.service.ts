@@ -27,8 +27,9 @@ export class ServicoTopico {
               item.publicadoEm,
               item.conteudo,
               item.likes,
+              item.publicadorImagem,
               item.publicadorNome,
-              item.publicadorImagem
+              item.publicadorId
             );
           }
         )  

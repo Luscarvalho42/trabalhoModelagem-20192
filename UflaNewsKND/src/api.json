@@ -7,8 +7,9 @@
       "publicadoEm": "22/10/2019",
       "conteudo": "Na UFLA, diversos laboratórios de diferentes cursos têm buscado em fontes renováveis novas opções de embalagens biodegradáveis, sejam elas ativas, inteligentes ou blendas. Há mais de 13 anos, novas embalagens para alimentos têm sido alvo de diversas pesquisas no Laboratório de Embalagens do Departamento de Ciência dos Alimentos (DCA). Para a professora Soraia Vilela Borges, no futuro as embalagens  deverão ser as “blendas ou compósitos ativos e inteligentes”, ou seja, embalagens que trazem consigo diversas funções e materiais com propriedades antimicrobianas e resistência térmica, por exemplo.",
       "likes": 42,
+      "publicadorImagem": "https://images.educamaisbrasil.com.br/content/superior/instituicao/logo/g/ufla.png",
       "publicadorNome": "Portal UFLA",
-      "publicadorImagem": "https://images.educamaisbrasil.com.br/content/superior/instituicao/logo/g/ufla.png"
+      "publicadorId": 1
     },
     {
       "id": 2,
@@ -17,8 +18,9 @@
       "publicadoEm": "24/10/2019",
       "conteudo": "A Diretoria de Processos Seletivos da Universidade Federal de Lavras (Dips/UFLA) comunica que já estão abertas as inscrições para interessados em aplicar as provas do Processo de Avaliação Seriada (PAS 2019/UFLA). A aplicação ocorrerá nos dias 23/11 e 24/11",
       "likes": 63,
+      "publicadorImagem": "https://images.educamaisbrasil.com.br/content/superior/instituicao/logo/g/ufla.png",
       "publicadorNome": "Portal UFLA",
-      "publicadorImagem": "https://images.educamaisbrasil.com.br/content/superior/instituicao/logo/g/ufla.png"
+      "publicadorId": 1
     },
     {
       "id": 3,
@@ -27,8 +29,9 @@
       "publicadoEm": "24/10/2019",
       "conteudo": "O Setor de Bolsas Institucionais da Praec informa a publicação do Edital Complementar do Programa de Aprendizado Técnico – PROAT. Estão sendo ofertadas 50 vagas reservadas para estudantes em situação de vulnerabilidade socioeconômica.",
       "likes": 27,
+      "publicadorImagem": "https://ufla.br/images/noticias/2018/selos/selo-praec.jpg",
       "publicadorNome": "PRAEC",
-      "publicadorImagem": "https://ufla.br/images/noticias/2018/selos/selo-praec.jpg"
+      "publicadorId": 2
     }
   ],
 

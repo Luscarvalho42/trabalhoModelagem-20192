@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ModeloBoletim } from '../model/boletim.model';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/Rx';
+import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
 
 const API_URL: string = "http://localhost:3000";
 
@@ -10,7 +11,7 @@ const API_URL: string = "http://localhost:3000";
 })
 export class ServicoBoletim {
 
-  listaBoletim: ModeloBoletim[];
+  cont: number;
 
   constructor(public http: HttpClient) {
   }
@@ -27,8 +28,9 @@ export class ServicoBoletim {
               item.publicadoEm,
               item.conteudo,
               item.likes,
+              item.publicadorImagem,
               item.publicadorNome,
-              item.publicadorImagem
+              item.publicadorId
             );
           }
         )  
@@ -37,6 +39,7 @@ export class ServicoBoletim {
   }
 
   pegarPeloId(id: number): Promise<ModeloBoletim> {
+    console.log(this.http.get(`${API_URL}/boletim/${id}`), "oooooooooooooooooo");
     return this.http.get(`${API_URL}/boletim/${id}`).map(
       (item: ModeloBoletim) => {
         return new ModeloBoletim(
@@ -46,10 +49,12 @@ export class ServicoBoletim {
           item.publicadoEm,
           item.conteudo,
           item.likes,
+          item.publicadorImagem,
           item.publicadorNome,
-          item.publicadorImagem
+          item.publicadorId
         );
       }
     ).toPromise();
   }
+
 }
