@@ -9,42 +9,64 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngIf="boletimAtual">
+  <ion-card class="cartao" *ngIf="boletimAtual">
     
     <img src="{{boletimAtual.capa}}"/>
     <ion-card-header>
-      <ion-card-title>
+      <ion-card-title class="txtC">
         {{boletimAtual.titulo}}
       </ion-card-title>
     </ion-card-header>
 
-    <ion-card-content>
+    <ion-card-content class="txtJ">
       <p>{{boletimAtual.conteudo}}</p>
     </ion-card-content>
 
-    <ion-card-subtitle>
+    <ion-card-subtitle class="txtC">
       Publicado em:<br>
       {{boletimAtual.publicadoEm}}
     </ion-card-subtitle>
 
   </ion-card>
-  
-  <ion-grid *ngIf="boletimAtual">
-    <ion-row>
-      <ion-col size="6">
-        <ion-label>
-          {{boletimAtual.publicadorNome}}
-        </ion-label>
-      </ion-col>
-      <ion-col size="6">
-        <ion-label>
-          {{boletimAtual.likes}}
-        </ion-label>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 
-  <ion-card *ngFor="let t of listaTopicos">
+  <ion-card class="cartao txtC" style="padding: 10px;" *ngFor="let t of listaTopicos">
     <ion-title>{{t.titulo}}</ion-title>
   </ion-card>
+
+  <ion-grid *ngIf="boletimAtual">
+
+    <ion-row align-items-center>
+      <ion-col>
+        <div class="centralizar">
+          <img class="imgIcone" src="{{boletimAtual.publicadorImagem}}"/>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div class="centralizar">
+          <ion-icon name="thumbs-up" style="font-size: 40px; color: gray;"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row align-items-center>
+      <ion-col>
+        <div class="centralizar">
+          <ion-label>
+            {{boletimAtual.publicadorNome}}
+          </ion-label>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div class="centralizar">
+          <ion-label>
+            {{boletimAtual.likes}}
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
 </ion-content>

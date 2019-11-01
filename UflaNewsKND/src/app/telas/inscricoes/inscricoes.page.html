@@ -5,5 +5,9 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-card *ngFor="let p of listaPublicadores">
+    <ion-title>
+      {{p.nome}}
+    </ion-title>
+  </ion-card> 
 </ion-content>

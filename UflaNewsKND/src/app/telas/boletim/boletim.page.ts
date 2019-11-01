@@ -15,7 +15,6 @@ export class BoletimPage implements OnInit {
 
   boletimAtual: ModeloBoletim;
   boletimId: number;
-  teste: number;
   listaTopicos: ModeloTopico[];
 
   constructor(public activatedRoute: ActivatedRoute, public servicoBoletim: ServicoBoletim, public servicoTopico: ServicoTopico) {
@@ -23,7 +22,6 @@ export class BoletimPage implements OnInit {
 
   async ngOnInit() {
     this.boletimId = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.teste = this.boletimId;
     this.boletimAtual = await this.servicoBoletim.pegarPeloId(this.boletimId);
     this.listaTopicos = await this.servicoTopico.getTopicos(this.boletimId);
   }

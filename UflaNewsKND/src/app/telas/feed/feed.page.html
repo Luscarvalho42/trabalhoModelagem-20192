@@ -1,14 +1,13 @@
 <ion-header>
-  <ion-searchbar showCancelButton="focus" placeholder="Pesquisar" (ionChange)="listar($event)">
+  <ion-searchbar class="bgAzul" showCancelButton="focus" placeholder="Pesquisar" (ionChange)="listar($event)">
   </ion-searchbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let b of listaBoletim" [routerLink]="['/boletim', b.id]">
-    <img src="{{b.capa}}"/>
+  <ion-card class="cartao" *ngFor="let b of listaBoletim" [routerLink]="['/boletim', b.id]">
+    <img class="imgCartao" src="{{b.capa}}"/>
     <ion-card-header>
-      <ion-card-title>{{b.titulo}}</ion-card-title>
-      <ion-label>{{b.likes}} likes | {{b.publicadorNome}}</ion-label>
+      <h5 class="txtC" style="margin: -10px 0 -10 0;">{{b.titulo}}</h5>
     </ion-card-header>
   </ion-card>
 </ion-content>

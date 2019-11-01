@@ -1,13 +1,21 @@
-<div style="padding-left: 30px;">
-<h3>Perfil</h3>
+<br>
+<div style="padding-left: 10%;">
+<h1 style="color: rgb(80, 80, 80);">Perfil</h1>
 </div>
 
 <ion-content>
-  <ion-card ion-card *ngIf="usuarioLogado">
+  <br>
+  <ion-card class="branco cartaoUsuario" ion-card *ngIf="usuarioLogado">
     <ion-title>{{usuarioLogado.nome}}</ion-title>
     <ion-label>Não é meu nome</ion-label>
+    
+    <br><br><br><br><br><br><br>
+
     <ion-title>{{usuarioLogado.email}}</ion-title>
     <ion-title>Incrições: {{usuarioLogado.inscricoes.length}}</ion-title>
+    
+    <br><br><br><br><br><br><br>
+
     <ion-button (click)="onClick()" fill="solid" shape="round" color="light">
       Alterar email
     </ion-button>

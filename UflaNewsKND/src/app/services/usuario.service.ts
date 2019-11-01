@@ -30,8 +30,16 @@ export class ServicoUsuario {
     ).toPromise();
   }
 
+  getInscricoes(id:number): Promise<number[]> {
+    return this.http.get(`${API_URL}/usuario/${id}`).map(
+      (item: ModeloUsuario) => {
+        return item.inscricoes;
+      }
+    ).toPromise();
+  }
+
   pegarPeloId(id: number): Promise<ModeloUsuario> {
-    return this.http.get(`${API_URL}/boletim/${id}`).map(
+    return this.http.get(`${API_URL}/usuario/${id}`).map(
       (item: ModeloUsuario) => {
         return new ModeloUsuario(
           item.id,
