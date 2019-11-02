@@ -10,7 +10,13 @@ const routes: Routes = [
   { path: 'perfil', loadChildren: './telas/perfil/perfil.module#PerfilPageModule' },
   { path: 'inscricoes', loadChildren: './telas/inscricoes/inscricoes.module#InscricoesPageModule' },
   { path: 'boletim/:id', loadChildren: './telas/boletim/boletim.module#BoletimPageModule' },
-  { path: 'publicador/:id', loadChildren: './telas/publicador/publicador.module#PublicadorPageModule' }
+  { path: 'publicador/:id', loadChildren: './telas/publicador/publicador.module#PublicadorPageModule' },
+  { path: 'alterar-nome1', loadChildren: './telas/alterar-nome1/alterar-nome1.module#AlterarNome1PageModule' },
+  { path: 'alterar-nome2', loadChildren: './telas/alterar-nome2/alterar-nome2.module#AlterarNome2PageModule' },
+  { path: 'alterar-senha1', loadChildren: './telas/alterar-senha1/alterar-senha1.module#AlterarSenha1PageModule' },
+  { path: 'alterar-senha2', loadChildren: './telas/alterar-senha2/alterar-senha2.module#AlterarSenha2PageModule' },
+  { path: 'alterar-email1', loadChildren: './telas/alterar-email1/alterar-email1.module#AlterarEmail1PageModule' },
+  { path: 'alterar-email2', loadChildren: './telas/alterar-email2/alterar-email2.module#AlterarEmail2PageModule' }
 ];
 
 @NgModule({

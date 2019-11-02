@@ -1,27 +1,34 @@
-<br>
-<div style="padding-left: 10%;">
-<h1 style="color: rgb(80, 80, 80);">Perfil</h1>
-</div>
-
-<ion-content>
+<ion-content >
+  <h1 class="tituloCartao">Perfil</h1>
   <br>
   <ion-card class="branco cartaoUsuario" ion-card *ngIf="usuarioLogado">
+    <br>
+  <!--Dados-->
     <ion-title>{{usuarioLogado.nome}}</ion-title>
-    <ion-label>Não é meu nome</ion-label>
+    
+    <ion-label style="padding-left: 20px;" [routerLink]="['/alterar-nome1']">
+      <u>Não é meu nome</u>
+    </ion-label>
     
     <br><br><br><br><br><br><br>
 
     <ion-title>{{usuarioLogado.email}}</ion-title>
-    <ion-title>Incrições: {{usuarioLogado.inscricoes.length}}</ion-title>
+    <ion-title [routerLink]="['/tabs/tab3']">Incrições: {{usuarioLogado.inscricoes.length}}</ion-title>
     
     <br><br><br><br><br><br><br>
 
-    <ion-button (click)="onClick()" fill="solid" shape="round" color="light">
-      Alterar email
-    </ion-button>
-    <br>
-    <ion-button (click)="onClick()" fill="solid" shape="round" color="light">
-      Alterar senha
-    </ion-button>
+  <!--Botoes-->
+    <div class="centralizar">
+      <ion-button [routerLink]="['/alterar-email1']" fill="solid" shape="round" color="light">
+        Alterar email
+      </ion-button>
+    </div>
+
+    <div class="centralizar">      
+      <ion-button [routerLink]="['/alterar-senha1']" fill="solid" shape="round" color="light">
+        Alterar senha
+      </ion-button>
+    </div>
+
   </ion-card>
 </ion-content>
