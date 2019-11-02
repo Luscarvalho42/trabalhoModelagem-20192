@@ -13,3 +13,16 @@ O desenvolvimento será feito utilizando o framework open source *Ionic*.
 [Link para o protótipo](https://xd.adobe.com/view/9ac3d7ed-6a0c-42c8-4d5b-a2bd0a4733bc-ecf2/)
 
 [Link para o Documento de Requisitos](https://drive.google.com/file/d/168CZolhgox_47IOcMQTM8kVkK85hlCuE/view?usp=sharing)
+
+### Como utilizar:
+Clone o repositório:
+> git clone https://github.com/Luscarvalho/trabalhoModelagem-20192.git
+
+Instale os scripsts do *framework* Ionic:
+> npm install @ionic/app-scripts@latest --save-dev
+
+Inicie a API REST:
+> json-server --watch src/api.json
+
+Execute o aplicativo:
+> ionic serve
