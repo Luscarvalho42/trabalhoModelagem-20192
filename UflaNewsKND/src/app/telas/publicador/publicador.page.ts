@@ -6,7 +6,6 @@ import { ModeloPublicador } from 'src/app/model/publicador.model';
 import { ServicoBoletim } from 'src/app/services/boletim.service';
 import { ModeloTopico } from 'src/app/model/topico.model';
 import { ServicoTopico } from 'src/app/services/topico.service';
-import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
 
 @Component({
   selector: 'app-publicador',
