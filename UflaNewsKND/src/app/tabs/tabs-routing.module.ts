@@ -8,7 +8,7 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'perfil',
         children: [
           {
             path: '',
@@ -18,7 +18,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2',
+        path: 'feed',
         children: [
           {
             path: '',
@@ -28,7 +28,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab3',
+        path: 'inscricoes',
         children: [
           {
             path: '',
@@ -39,15 +39,15 @@ const routes: Routes = [
       },
       {
         path: '',
-        loadChildren: () =>
-          import('../telas/login/login.module').then(m => m.LoginPageModule)
+        redirectTo: '/tabs/feed',
+        pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    loadChildren: () =>
-      import('../telas/login/login.module').then(m => m.LoginPageModule)
+    redirectTo: '/tabs/feed',
+    pathMatch: 'full'
   }
 ];
 

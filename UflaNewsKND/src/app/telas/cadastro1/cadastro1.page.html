@@ -1,9 +1,11 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>cadastro1</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="bgAzul">
+  <ion-icon class="voltar" [routerLink]="['']" name="arrow-round-back"></ion-icon>
 
-<ion-content>
-
-</ion-content>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <ion-input class="caixaTexto" type="text" placeholder="Nome"></ion-input>
+  <ion-input class="caixaTexto" type="email" placeholder="Email"></ion-input>
+  <p class="continuar" [routerLink]="['/cadastro2']">
+    CONTINUAR
+    <ion-icon name="checkmark"></ion-icon>
+  </p>
+</div>

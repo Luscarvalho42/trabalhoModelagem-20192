@@ -1,20 +1,22 @@
-<div class="centralizar">
-  <img class="logo" src="https://i.ibb.co/DRCg0Xk/Captura-de-Tela-80.png">
-</div>
-
-<div class="divCartao centralizar">
-
-  <br><br><br><br><br><br>
-  <ion-input class="caixaTexto" type="Email" placeholder="Email"></ion-input>
-  <ion-input class="caixaTexto" type="Password" placeholder="Senha"></ion-input>
-  <br>
+<ion-content>
   <div class="centralizar">
-    <ion-button [routerLink]="['/tabs/tab2']" fill="solid" shape="round" color="light">
-      Entrar
-    </ion-button>
-    <br><br><br><br><br><br><br>
-    <ion-button [routerLink]="['/cadastrar1']" fill="solid" shape="round" color="light">
-      Cadastrar
-    </ion-button>
+    <img class="logo" src="https://i.ibb.co/DRCg0Xk/Captura-de-Tela-80.png">
   </div>
-</div>
+  
+  <div class="divCartao centralizar">
+  
+    <br><br><br><br><br><br>
+    <ion-input class="caixaTexto" type="Email" placeholder="Email"></ion-input>
+    <ion-input class="caixaTexto" type="Password" placeholder="Senha"></ion-input>
+    <br>
+    <div class="centralizar">
+      <ion-button [routerLink]="['/tabs']" fill="solid" shape="round" color="light">
+        Entrar
+      </ion-button>
+      <br><br><br><br><br><br><br>
+      <ion-button [routerLink]="['/cadastro1']" fill="solid" shape="round" color="light">
+        Cadastrar
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
