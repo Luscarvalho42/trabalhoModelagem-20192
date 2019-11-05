@@ -39,15 +39,15 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab2',
-        pathMatch: 'full'
+        loadChildren: () =>
+          import('../telas/login/login.module').then(m => m.LoginPageModule)
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab2',
-    pathMatch: 'full'
+    loadChildren: () =>
+      import('../telas/login/login.module').then(m => m.LoginPageModule)
   }
 ];
 
