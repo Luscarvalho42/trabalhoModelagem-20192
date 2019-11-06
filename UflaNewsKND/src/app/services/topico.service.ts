@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ModeloTopico } from '../model/topico.model';
+import { ModeloTopico } from '../model/secoes.model';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/Rx';
 import { ModeloBoletim } from '../model/boletim.model';
@@ -27,8 +27,6 @@ export class ServicoTopico {
               item.publicadoEm,
               item.conteudo,
               item.likes,
-              item.publicadorImagem,
-              item.publicadorNome,
               item.publicadorId
             );
           }

@@ -29,16 +29,17 @@
 
   </ion-card>
 
-  <ion-card class="cartao txtC" style="padding: 10px;" *ngFor="let t of listaTopicos">
-    <ion-title>{{t.titulo}}</ion-title>
-  </ion-card>
+    <ion-card  *ngFor="let s of listaSecoes" (click)="mostrarSecao(s)" class="cartao txtC" style="padding: 10px;">
+      <ion-icon name="{{s.icone}}" style="font-size: 40px; color: gray;"></ion-icon>
+      <ion-title>{{s.titulo}}</ion-title>
+    </ion-card>
 
   <ion-grid *ngIf="boletimAtual">
 
     <ion-row align-items-center>
       <ion-col>
         <div class="centralizar"  [routerLink]="['/publicador', boletimAtual.publicadorId]">
-          <img class="imgIcone" src="{{boletimAtual.publicadorImagem}}"/>
+          <img class="imgIcone" src="{{publicador.foto}}"/>
         </div>
       </ion-col>
 
@@ -52,8 +53,8 @@
     <ion-row align-items-center>
       <ion-col>
         <div class="centralizar">
-          <ion-label>
-            {{boletimAtual.publicadorNome}}
+          <ion-label [routerLink]="['/publicador', boletimAtual.publicadorId]">
+            {{publicador.nome}}
           </ion-label>
         </div>
       </ion-col>

@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ModeloBoletim } from 'src/app/model/boletim.model';
 import { ModeloPublicador } from 'src/app/model/publicador.model';
 import { ServicoBoletim } from 'src/app/services/boletim.service';
-import { ModeloTopico } from 'src/app/model/topico.model';
+import { ModeloTopico } from 'src/app/model/secoes.model';
 import { ServicoTopico } from 'src/app/services/topico.service';
 
 @Component({
