@@ -3,10 +3,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  { path: '', loadChildren: './telas/login/login.module#LoginPageModule' },
+  { path: 'login', loadChildren: './telas/login/login.module#LoginPageModule' },
   { path: 'feed', loadChildren: './telas/feed/feed.module#FeedPageModule' },
   { path: 'perfil', loadChildren: './telas/perfil/perfil.module#PerfilPageModule' },
   { path: 'inscricoes', loadChildren: './telas/inscricoes/inscricoes.module#InscricoesPageModule' },
