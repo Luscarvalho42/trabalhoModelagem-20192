@@ -27,8 +27,6 @@ export class ServicoBoletim {
               item.publicadoEm,
               item.conteudo,
               item.likes,
-              item.publicadorImagem,
-              item.publicadorNome,
               item.publicadorId
             );
           }
@@ -48,8 +46,6 @@ export class ServicoBoletim {
           item.publicadoEm,
           item.conteudo,
           item.likes,
-          item.publicadorImagem,
-          item.publicadorNome,
           item.publicadorId
         );
       }
