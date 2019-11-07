@@ -1,4 +1,3 @@
-  
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -9,6 +8,7 @@
 </ion-header>
 
 <ion-content>
+<!--BOLETIM-->
   <ion-card class="cartao" *ngIf="boletimAtual">
     
     <img src="{{boletimAtual.capa}}"/>
@@ -29,13 +29,14 @@
 
   </ion-card>
 
-    <ion-card  *ngFor="let s of listaSecoes" (click)="mostrarSecao(s)" class="cartao txtC" style="padding: 10px;">
-      <ion-icon name="{{s.icone}}" style="font-size: 40px; color: gray;"></ion-icon>
-      <ion-title>{{s.titulo}}</ion-title>
-    </ion-card>
+<!--SEÇOES-->
+  <ion-card  *ngFor="let s of listaSecoes" (click)="mostrarSecao(s)" class="cartao txtC" style="padding: 10px;">
+    <ion-icon name="{{s.icone}}" style="font-size: 40px; color: gray;"></ion-icon>
+    <ion-title>{{s.titulo}}</ion-title>
+  </ion-card>
 
+<!--PUBLICADOR/LIKE-->
   <ion-grid *ngIf="boletimAtual">
-
     <ion-row align-items-center>
       <ion-col>
         <div class="centralizar"  [routerLink]="['/publicador', boletimAtual.publicadorId]">
@@ -69,5 +70,27 @@
     </ion-row>
 
   </ion-grid>
+
+<!--COMENTARIOS-->
+  <ion-card class="cartao caixaComentario">
+    <ion-input type="text" placeholder="Escreva Algo" class="caixaTexto">
+    </ion-input>
+    <ion-label (click)="comentar()" class="comentar">Comentar</ion-label>
+  </ion-card>
+
+  <ion-card  *ngFor="let c of listaComentarios" class="cartao txtJ" style="padding: 10px;">
+    <ion-grid>
+      <ion-row align-items-center>
+        <ion-col size="7">
+          <ion-title>{{c.usuario}}</ion-title>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="txtC">{{c.data}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    <p>{{c.comentario}}</p>
+  </ion-card>
 
 </ion-content>
