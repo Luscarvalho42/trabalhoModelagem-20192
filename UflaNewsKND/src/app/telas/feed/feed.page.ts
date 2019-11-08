@@ -19,8 +19,13 @@ export class FeedPage implements OnInit {
   }
 
   async ionViewDidEnter() {
-    this.listaBoletim = await this.boletins.getAll();
+    this.listaBoletim = await this.boletins.pegarTodos();
   }
+
+  async atualizarLista(event: any) {
+    this.listaBoletim = await this.boletins.buscarPorTitulo(event.target.value);
+}
+
 
   ngOnInit() {
   }
