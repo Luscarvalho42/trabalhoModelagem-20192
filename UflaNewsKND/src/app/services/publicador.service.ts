@@ -19,10 +19,25 @@ export class ServicoPublicador {
       (item: ModeloPublicador) => {
         return new ModeloPublicador(
           item.id,
-          item.noticias,
           item.foto,
           item.nome
         );
+      }
+    ).toPromise();
+  }
+
+  pegarTodos(): Promise<ModeloPublicador[]> {
+    return this.http.get(`${API_URL}/publicador`).map(
+      (itens:ModeloPublicador[]) => {
+        return itens.map(
+          (item: ModeloPublicador) => {
+            return new ModeloPublicador(
+              item.id,
+              item.foto,
+              item.nome
+            );
+          }
+        )
       }
     ).toPromise();
   }

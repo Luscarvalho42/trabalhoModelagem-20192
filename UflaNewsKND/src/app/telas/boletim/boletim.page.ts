@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ModeloBoletim } from 'src/app/model/boletim.model';
 import { ServicoBoletim } from 'src/app/services/boletim.service';
 import { ActivatedRoute } from '@angular/router';
-import { ModeloTopico, ModeloSecoes } from 'src/app/model/secoes.model';
 import { ServicoTopico } from 'src/app/services/topico.service';
 import { ModeloPublicador } from 'src/app/model/publicador.model';
 import { AlertController } from '@ionic/angular';
 import { ModeloComentario } from 'src/app/model/comentario.model';
+import { ModeloSecoes } from 'src/app/model/secoes.model';
 
 @Component({
   selector: 'app-boletim',
@@ -43,7 +43,6 @@ export class BoletimPage implements OnInit {
 
     this.publicador = new ModeloPublicador(
       1,
-      [1, 2],
       "https://images.educamaisbrasil.com.br/content/superior/instituicao/logo/g/ufla.png",
       "Portal UFLA"
     );

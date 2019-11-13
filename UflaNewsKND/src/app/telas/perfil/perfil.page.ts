@@ -18,7 +18,7 @@ export class PerfilPage implements OnInit {
 
   async ionViewDidEnter() {
     this.id = 1;
-    this.usuarioLogado = await this.usuario.getDados(this.id);
+    this.usuarioLogado = await this.usuario.pegarPeloId(this.id);
   }
 
   ngOnInit() {

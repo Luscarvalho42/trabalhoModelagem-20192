@@ -73,7 +73,27 @@ export class ServicoBoletim {
         )
       }
     ).toPromise();
-}
+  }
+
+  pegarPeloPublicador(id: number): Promise<ModeloBoletim[]> {
+    return this.http.get(`${API_URL}/boletim?publicadorId=${id}`).map(
+      (itens: ModeloBoletim[]) => {
+        return itens.map(
+          (item: ModeloBoletim) => {
+            return new ModeloBoletim(
+              item.id,
+              item.capa,
+              item.titulo,
+              item.publicadoEm,
+              item.conteudo,
+              item.likes,
+              item.publicadorId
+            );
+          }
+        )
+      }
+    ).toPromise();
+  }
 
 
 }
