@@ -9,25 +9,23 @@ const API_URL: string = "http://localhost:3000";
 @Injectable({
   providedIn: 'root'
 })
-export class ServicoTopico {
-  listaTopico: ModeloSecoes[];
+export class ServicoSecao {
+  listaSecao: ModeloSecoes[];
 
   constructor(public http: HttpClient) {
   }
   
-  getTopicos(id: number): Promise<ModeloBoletim[]> {
-    return this.http.get(`${API_URL}/topico?id=${id}`).map(
-      (itens: ModeloBoletim[]) => {
+  pegarSecoesDoBoletim(id: number): Promise<ModeloSecoes[]> {
+    return this.http.get(`${API_URL}/secao?boletimId=${id}`).map(
+      (itens: ModeloSecoes[]) => {
         return itens.map(
-          (item: ModeloBoletim) => {
-            return new ModeloBoletim(
+          (item: ModeloSecoes) => {
+            return new ModeloSecoes(
               item.id,
-              item.capa,
+              item.boletimId,
               item.titulo,
-              item.publicadoEm,
               item.conteudo,
-              item.likes,
-              item.publicadorId
+              item.icone
             );
           }
         )  

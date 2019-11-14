@@ -46,21 +46,45 @@
   "secao": [ {
       "id": 1,
       "boletimId": 1,
-      "titulo": "Ações da campanha: 18/09",
-      "conteudo": "Roda de conversa no Centro de convivência, das 12h às 13h",
-      "icone": ""
+      "titulo": "Vídeo",
+      "conteudo": "https://www.youtube.com/watch?v=MgaDhF4XxJw",
+      "icone": "logo-youtube"
     }, {
       "id": 2,
       "boletimId": 1,
-      "titulo": "Ações da campanha: 28/09", 
-      "conteudo": "Palestra sobre suicídio e depressão, Anfiteatro do Departamento de Agricultura (DAG), das 9h às 10h30",
-      "icone": ""
+      "titulo": "Reportagem por:", 
+      "conteudo": "Karina Mascarenhas, jornalista - bolsista Dcom/Fapemig",
+      "icone": "search"
+    }, {
+      "id": 3,
+      "boletimId": 2,
+      "titulo": "Escrito por:",
+      "conteudo": "Ana Eliza Alvim",
+      "icone": "search"
     }, {
       "id": 4,
-      "boletimId": 1,
-      "titulo": "Ações da campanha: 28/09",
-      "conteudo": "Palestra sobre suicídio e depressão, Anfiteatro do Departamento de Agricultura (DAG), das 9h às 10h30",
-      "icone": ""
+      "boletimId": 3,
+      "titulo": "Link para o EDITAL",
+      "conteudo": "https://praec.ufla.br/images/site-pib-ufla/2019/11/EDITAL-N%C2%BA-33-2019-PRAEC-UFLA-PROAT-Complementar-RETIFICA-EDITAL-N%C2%BA32.pdf",
+      "icone": "document"
+    }, {
+      "id": 5,
+      "boletimId": 4,
+      "titulo": "13/11/2019 - 08:30",
+      "conteudo": "Abertura",
+      "icone": "calendar"
+    }, {
+      "id": 6,
+      "boletimId": 4,
+      "titulo": "13/11/2019 - 09:00",
+      "conteudo": "Palestra: Ubirajara Batista (UFMG)",
+      "icone": "calendar"
+    }, {
+      "id": 7,
+      "boletimId": 4,
+      "titulo": "13/11/2019 - 14:00",
+      "conteudo": "Palestra: Edmar Soares (UFMG)",
+      "icone": "calendar"
     }
   ],
 
