@@ -51,34 +51,6 @@
       "usuario": "Pedro",
       "comentario": "Supimpa. Parabens aos envolvidos!",
       "data": "14/10/2019"
-    },
-    {
-      "id": 4,
-      "boletimId": 2,
-      "usuario": "Teste",
-      "comentario": "testando comentario no 2",
-      "data": "14/10/2019"
-    },
-    {
-      "id": 5,
-      "boletimId": 2,
-      "usuario": "Teste",
-      "comentario": "foi?",
-      "data": "14/10/2019"
-    },
-    {
-      "id": 6,
-      "boletimId": 2,
-      "usuario": "Teste",
-      "comentario": "continua?",
-      "data": "14/10/2019"
-    },
-    {
-      "id": 7,
-      "boletimId": 1,
-      "usuario": "Teste",
-      "comentario": "testando",
-      "data": "14/10/2019"
     }
   ],
   "secao": [

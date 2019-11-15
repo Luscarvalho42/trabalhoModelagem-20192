@@ -96,6 +96,21 @@ export class BoletimPage implements OnInit {
   }
 
   apagar(id: number) {
-    console.log("apagado")
+    console.log(id);
+    this.servicoComentario.apagarPeloId(id);
+    this.ngOnInit();
+    this.avisarApagado();
+  }
+
+  async avisarApagado() {
+    const secao = await this.controleAlerta.create({
+      header: "Apagado",
+      subHeader: "",
+      message: "Seu comentário foi apagado",
+      buttons: ['OK']
+    });
+
+    await secao.present();
+    let resultado = await secao.onDidDismiss();
   }
 }

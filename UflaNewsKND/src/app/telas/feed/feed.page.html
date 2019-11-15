@@ -7,7 +7,7 @@
   </ion-searchbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="listaPublicadores">
   <ion-card class="cartao" *ngFor="let b of listaBoletim">
     <img class="imgCartao"  [routerLink]="['/boletim', b.id]" src="{{b.capa}}"/>
     <div>

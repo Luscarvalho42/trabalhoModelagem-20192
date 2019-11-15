@@ -85,4 +85,9 @@ export class ServicoComentario {
 
     return comentarios[comentarios.length-1].id + 1;
   }
+
+  apagarPeloId(id: number) {
+    return this.http.delete(`${API_URL}/comentario/${id}`).toPromise();
+  }
+
 }
