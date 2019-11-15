@@ -16,8 +16,4 @@ export class LoginPage implements OnInit {
   usuariosCadastrados: ModeloUsuario[];
 
   constructor(public usuarios: ServicoUsuario) { }
-
-  async validar() {
-    this.usuariosCadastrados = await this.usuarios.pegarTodos();
-  }
 }

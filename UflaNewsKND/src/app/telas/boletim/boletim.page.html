@@ -36,10 +36,10 @@
   </ion-card>
 
 <!--PUBLICADOR/LIKE-->
-  <ion-grid *ngIf="boletimAtual">
+  <ion-grid *ngIf="boletimAtual && publicador">
     <ion-row align-items-center>
       <ion-col>
-        <div class="centralizar"  [routerLink]="['/publicador', boletimAtual.publicadorId]">
+        <div class="centralizar" [routerLink]="['/publicador', boletimAtual.publicadorId]">
           <img class="imgIcone" src="{{publicador.foto}}"/>
         </div>
       </ion-col>
@@ -71,13 +71,37 @@
 
   </ion-grid>
 
-<!--COMENTARIOS-->
-  <ion-card class="cartao caixaComentario">
-    <ion-input type="text" placeholder="Escreva Algo" class="caixaTexto">
-    </ion-input>
-    <ion-label (click)="comentar()" class="comentar">Comentar</ion-label>
+<!--COMENTAR-->
+  <ion-card class="cartao bordaAzul">
+    <ion-grid>
+      <ion-row>
+        <ion-input type="text" placeholder="Escreva Algo" class="caixaTexto" [(ngModel)]="comentario"></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-label (click)="comentar()" class="comentar">Comentar</ion-label>
+      </ion-row>
+    </ion-grid>
   </ion-card>
 
+<!--COMENTARIOS DO USUARIO LOGADO-->
+  <ion-card  *ngFor="let u of listaComentariosUsuario" class="cartao bordaAzul txtJ" style="padding: 10px;">
+    <ion-grid>
+      <ion-row align-items-center>
+        <ion-col size="4" class="centralizar">
+          <ion-title>Você</ion-title>
+        </ion-col>
+        <ion-col size="4" class="centralizar">
+          <ion-label class="txtC">{{u.data}}</ion-label>
+        </ion-col>
+        <ion-col size="4" class="centralizar">
+          <ion-icon (click)="apagar(u.id)" name="trash" style="font-size: 25px;"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <p>{{u.comentario}}</p>
+  </ion-card>
+
+<!--COMENTARIOS DE OUTROS USUÁRIOS-->
   <ion-card  *ngFor="let c of listaComentarios" class="cartao txtJ" style="padding: 10px;">
     <ion-grid>
       <ion-row align-items-center>

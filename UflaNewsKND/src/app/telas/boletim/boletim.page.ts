@@ -8,6 +8,9 @@ import { ModeloComentario } from 'src/app/model/comentario.model';
 import { ModeloSecoes } from 'src/app/model/secoes.model';
 import { ServicoSecao } from 'src/app/services/topico.service';
 import { ServicoPublicador } from 'src/app/services/publicador.service';
+import { ServicoUsuario } from 'src/app/services/usuario.service';
+import { ModeloUsuario } from 'src/app/model/usuario.model';
+import { ServicoComentario } from 'src/app/services/comentario.service';
 
 @Component({
   selector: 'app-boletim',
@@ -22,36 +25,31 @@ export class BoletimPage implements OnInit {
   publicador: ModeloPublicador;
   listaSecoes: ModeloSecoes[];
   listaComentarios: ModeloComentario[];
+  modeloComentario: ModeloComentario;
+  comentario: string;
+  usuario: ModeloUsuario;
+  idComentario: number;
+  listaComentariosUsuario: ModeloComentario[];
 
   constructor(public activatedRoute: ActivatedRoute,
     public servicoBoletim: ServicoBoletim,
     public controleAlerta: AlertController,
     public servicoSecao: ServicoSecao,
-    public servicoPublicador: ServicoPublicador
+    public servicoPublicador: ServicoPublicador,
+    public servicoUsuario: ServicoUsuario,
+    public servicoComentario: ServicoComentario
   ) {}
 
   async ngOnInit() {
-    
+
+    this.usuario = await this.servicoUsuario.pegarLogado();
     this.boletimId = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
+
     this.boletimAtual = await this.servicoBoletim.pegarPeloId(this.boletimId);
     this.publicador = await this.servicoPublicador.pegarPeloId(this.boletimAtual.publicadorId);
-    this.listaSecoes = await this.servicoSecao.pegarSecoesDoBoletim(this.boletimId)
-    this.listaComentarios = [
-      new ModeloComentario(
-        1,
-        1,
-        "Marvin",
-        "Muito legal, gostaria de ter a capacidade de fazer algo assim",
-        "24/10/2019, 12:35"
-      ),
-      new ModeloComentario(
-        2,
-        1,
-        "Pedro",
-        "Supimpa. Parabens aos envolvidos!",
-        "25/10/2019, 07:11"
-      )
-    ]
+    this.listaSecoes = await this.servicoSecao.pegarSecoesDoBoletim(this.boletimId);
+    this.listaComentariosUsuario = await this.servicoComentario.pegarComentarioDoUsuario(this.boletimId, this.usuario.nome);
+    this.listaComentarios = await this.servicoComentario.pegarComentariosDoBoletim(this.boletimId, this.usuario.nome);
   }
 
   async mostrarSecao(s: ModeloSecoes) {
@@ -64,5 +62,40 @@ export class BoletimPage implements OnInit {
 
     await secao.present();
     let resultado = await secao.onDidDismiss();
+  }
+
+  async comentar() {
+    this.idComentario = await this.servicoComentario.proximoId();
+    this.modeloComentario = new ModeloComentario(
+      this.idComentario,
+      this.boletimId,
+      this.usuario.nome,
+      this.comentario,
+      this.data()
+    );
+    
+    this.servicoComentario.salvarComentario(this.modeloComentario);
+    this.comentario = "";
+    this.ngOnInit();
+  }
+
+  data(): string{
+    const date = new Date();
+
+    const ano = date.getFullYear();
+    const mes = date.getMonth();
+    const dia = date.getDate();
+
+    let mesValor = '';
+    let diaValor = '';
+
+    mesValor = ((mes < 10) ? '0' : '').concat(mes.toString())
+    diaValor = ((dia < 10) ? '0' : '').concat(dia.toString())
+
+    return diaValor.toString().concat('/').concat(mesValor).concat('/').concat(ano.toString());
+  }
+
+  apagar(id: number) {
+    console.log("apagado")
   }
 }
