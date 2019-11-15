@@ -95,5 +95,28 @@ export class ServicoBoletim {
     ).toPromise();
   }
 
+  async darLike(id: number) {
+    var boletim = await this.pegarPeloId(id);
+    var likes = boletim.likes;
+    likes += 1;
 
+    this.atualizarLikes(id, likes);
+  }
+
+  async removerLike(id: number) {
+    var boletim = await this.pegarPeloId(id);
+    var likes = boletim.likes;
+
+    likes -= 1;
+
+    this.atualizarLikes(id, likes);
+  }
+
+  atualizarLikes(id: number, numLikes: number) {
+    const dados: any = {
+      likes: numLikes
+    }
+
+    this.http.patch(`${API_URL}/boletim/${id}`, dados).toPromise();
+  }
 }

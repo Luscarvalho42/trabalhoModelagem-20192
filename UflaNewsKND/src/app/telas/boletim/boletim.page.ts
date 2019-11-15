@@ -30,6 +30,7 @@ export class BoletimPage implements OnInit {
   usuario: ModeloUsuario;
   idComentario: number;
   listaComentariosUsuario: ModeloComentario[];
+  like: boolean;
 
   constructor(public activatedRoute: ActivatedRoute,
     public servicoBoletim: ServicoBoletim,
@@ -44,12 +45,12 @@ export class BoletimPage implements OnInit {
 
     this.usuario = await this.servicoUsuario.pegarLogado();
     this.boletimId = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
-
     this.boletimAtual = await this.servicoBoletim.pegarPeloId(this.boletimId);
     this.publicador = await this.servicoPublicador.pegarPeloId(this.boletimAtual.publicadorId);
     this.listaSecoes = await this.servicoSecao.pegarSecoesDoBoletim(this.boletimId);
     this.listaComentariosUsuario = await this.servicoComentario.pegarComentarioDoUsuario(this.boletimId, this.usuario.nome);
     this.listaComentarios = await this.servicoComentario.pegarComentariosDoBoletim(this.boletimId, this.usuario.nome);
+    this.conferirLike();
   }
 
   async mostrarSecao(s: ModeloSecoes) {
@@ -112,5 +113,22 @@ export class BoletimPage implements OnInit {
 
     await secao.present();
     let resultado = await secao.onDidDismiss();
+  }
+
+  async conferirLike() {
+    var likes: number[] = await this.servicoUsuario.pegarLikes();
+    this.like = likes.includes(this.boletimId);
+  }
+
+  async alterarValorLike() {
+    if(this.like) {
+      await this.servicoUsuario.removerLike(this.boletimId);
+      await this.servicoBoletim.removerLike(this.boletimId);
+    } else {
+      await this.servicoUsuario.darLike(this.boletimId);
+      await this.servicoBoletim.darLike(this.boletimId);
+    }
+    this.ngOnInit();
+
   }
 }

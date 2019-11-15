@@ -11,7 +11,7 @@ const API_URL: string = "http://localhost:3000";
 export class ServicoUsuario {
 
   usuario: ModeloUsuario;
-  usuarioLogado: number = 1;
+  usuarioLogadoId: number = 1;
 
   constructor(public http: HttpClient) {
   }
@@ -40,7 +40,7 @@ export class ServicoUsuario {
   }
 
   pegarLogado(): Promise<ModeloUsuario> {
-    return this.http.get(`${API_URL}/usuario/${this.usuarioLogado}`).map(
+    return this.http.get(`${API_URL}/usuario/${this.usuarioLogadoId}`).map(
       (item: ModeloUsuario) => {
         return new ModeloUsuario(
           item.id,
@@ -52,5 +52,35 @@ export class ServicoUsuario {
         );
       }
     ).toPromise();
+  }
+
+  async pegarLikes(): Promise<number[]> {
+    var usuario: ModeloUsuario = await this.pegarLogado();
+    return usuario.likes;
+  }
+
+  async removerLike(id: number) {
+    var usuario: ModeloUsuario = await this.pegarLogado();
+    var pos: number = usuario.likes.indexOf(id);
+    var likes: number[] = usuario.likes;
+    likes.splice(pos, 1);
+
+    this.atualizarLikes(likes, usuario.id)
+  }
+
+  async darLike(id: number) {
+    var usuario: ModeloUsuario = await this.pegarLogado();
+    var likes: number[] = usuario.likes;
+    likes.push(id);
+
+    this.atualizarLikes(likes, usuario.id);
+  }
+
+  async atualizarLikes(likesAtualizados: number[], id: number) {
+    const dados: any = {
+      likes: likesAtualizados
+    }
+  
+    this.http.patch(`${API_URL}/usuario/${id}`, dados).toPromise();
   }
 }

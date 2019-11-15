@@ -45,8 +45,12 @@
       </ion-col>
 
       <ion-col>
-        <div class="centralizar">
-          <ion-icon name="thumbs-up" style="font-size: 40px; color: gray;"></ion-icon>
+        <div class="centralizar" *ngIf="!like">
+          <ion-icon (click)="alterarValorLike()" name="thumbs-up" style="font-size: 40px; color: gray;"></ion-icon>
+        </div>
+        
+        <div class="centralizar" *ngIf="like">
+          <ion-icon (click)="alterarValorLike()" name="thumbs-up" style="font-size: 40px; color: #0060BF;"></ion-icon>
         </div>
       </ion-col>
     </ion-row>
