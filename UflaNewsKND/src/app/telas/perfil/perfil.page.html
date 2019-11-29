@@ -15,7 +15,7 @@
     <ion-title>{{usuarioLogado.email}}</ion-title>
     <ion-title [routerLink]="['/tabs/tab3']">Incrições: {{usuarioLogado.inscricoes.length}}</ion-title>
     
-    <br><br><br><br><br><br><br>
+    <br><br><br><br><br>
 
   <!--Botoes-->
     <div class="centralizar">
@@ -27,6 +27,11 @@
     <div class="centralizar">      
       <ion-button [routerLink]="['/alterar-senha1']" fill="solid" shape="round" color="light">
         Alterar senha
+      </ion-button>
+    </div>
+    <div class="centralizar">      
+      <ion-button (click)="sair()" fill="solid" shape="round" color="medium">
+        Sair
       </ion-button>
     </div>
 

@@ -41,4 +41,16 @@ export class ServicoPublicador {
       }
     ).toPromise();
   }
+
+  pegarIdTodos(): Promise<number[]> {
+    return this.http.get(`${API_URL}/publicador`).map(
+      (itens:ModeloPublicador[]) => {
+        return itens.map(
+          (item: ModeloPublicador) => {
+            return item.id;
+          }
+        )
+      }
+    ).toPromise();
+  }
 }

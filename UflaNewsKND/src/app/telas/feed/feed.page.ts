@@ -13,6 +13,7 @@ import { ServicoUsuario } from 'src/app/services/usuario.service';
 
 export class FeedPage implements OnInit {
 
+  listaBoletimPesquisa: ModeloBoletim[];
   listaBoletim: ModeloBoletim[];
   listaPublicadores: ModeloPublicador[];
 
@@ -27,15 +28,24 @@ export class FeedPage implements OnInit {
   }
 
   async ionViewDidEnter() {
-    console.log(this.usuarios.getId());
-    this.listaBoletim = await this.boletins.pegarTodos();
+    this.listaBoletim = [];
     this.listaPublicadores = await this.publicadores.pegarTodos();
+
+    var inscricoes = await this.usuarios.pegarInscricoes(this.usuarios.getId());
+    for(let i = 0; i < inscricoes.length; i++) {
+      var boletins = await this.boletins.pegarPeloPublicador(inscricoes[i]);
+      for(let j = 0; j < boletins.length; j++) {
+        this.listaBoletim.unshift(boletins[j]);
+      }
+    }
   }
 
   async atualizarLista(event: any) {
     this.listaBoletim = await this.boletins.buscarPorTitulo(event.target.value);
+    if(event.target.value == "") {
+      this.ionViewDidEnter()
+    }
   }
-
 
   ngOnInit() {
   }

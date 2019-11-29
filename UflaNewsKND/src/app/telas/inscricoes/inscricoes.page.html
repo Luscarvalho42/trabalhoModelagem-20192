@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="cartao" *ngFor="let p of listaPublicadores">
+  <ion-card class="cartao" *ngFor="let p of listaPublicadoresInscritos">
     <ion-grid>
       <ion-row class="ion-align-self-center">
         <ion-col size="2" class="centralizar" [routerLink]="['/publicador', p.id]">
@@ -17,11 +17,33 @@
           </ion-title>
         </ion-col>
         <ion-col size="3" class="centralizer">
-          <ion-button (click)="cancelarInscricao()" class="txtC">
+          <ion-button (click)="cancelarInscricao(p.id)" class="txtC">
             Inscrito
           </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-card> 
+  </ion-card>
+
+  <br><br>
+
+  <ion-card class="cartao" *ngFor="let o of listaOutrosPublicadores">
+    <ion-grid>
+      <ion-row class="ion-align-self-center">
+        <ion-col size="2" class="centralizar" [routerLink]="['/publicador', o.id]">
+          <img src="{{o.foto}}" class="imgIcone" >
+        </ion-col>
+        <ion-col size="6" class="centralizar" [routerLink]="['/publicador', o.id]">
+          <ion-title>
+            {{o.nome}}
+          </ion-title>
+        </ion-col>
+        <ion-col size="4" class="centralizer">
+          <ion-button color="medium" (click)="inscrever(o.id)" class="txtC">
+            Inscrever
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 </ion-content>

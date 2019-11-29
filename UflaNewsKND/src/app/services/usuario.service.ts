@@ -153,20 +153,28 @@ export class ServicoUsuario {
 
   async pegarUsuarios(): Promise<ModeloUsuario[]> {
     return this.http.get(`${API_URL}/usuario`).map(
-    (itens: ModeloUsuario[]) => {
-      return itens.map(
-        (item: ModeloUsuario) => {
-          return new ModeloUsuario(
-            item.id,
-            item.nome,
-            item.email,
-            item.senha,
-            item.likes,
-            item.inscricoes
-          );
-        }
-      )
+      (itens: ModeloUsuario[]) => {
+        return itens.map(
+          (item: ModeloUsuario) => {
+            return new ModeloUsuario(
+              item.id,
+              item.nome,
+              item.email,
+              item.senha,
+              item.likes,
+              item.inscricoes
+            );
+          }
+        )
+      }
+    ).toPromise(); 
+  }
+
+  async atualizarInscricoes(inscricoesAtualizadas: number[]) {
+    const dados: any = {
+      inscricoes: inscricoesAtualizadas
     }
-  ).toPromise();
-}
+    
+    this.http.patch(`${API_URL}/usuario/${this.getId()}`, dados).toPromise();
+  }
 }

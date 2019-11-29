@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicoUsuario } from 'src/app/services/usuario.service';
 import { ModeloUsuario } from 'src/app/model/usuario.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -13,7 +14,10 @@ export class PerfilPage implements OnInit {
   id: number;
   usuarioLogado: ModeloUsuario;
 
-  constructor(public usuario: ServicoUsuario) {
+  constructor(
+    public usuario: ServicoUsuario,
+    public router: Router
+    ) {
   }
 
   async ionViewDidEnter() {
@@ -24,4 +28,8 @@ export class PerfilPage implements OnInit {
   ngOnInit() {
   }
 
+  sair() {
+    this.usuario.setUsuarioLogadoId(-1);
+    this.router.navigate(['login']);
+  }
 }
