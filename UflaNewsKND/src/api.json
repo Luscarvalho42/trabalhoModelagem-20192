@@ -58,6 +58,17 @@
       "usuario": "Marvin",
       "comentario": "Testando Marvin",
       "data": "29/10/2019"
+    },
+    {
+      "id": {
+        "__zone_symbol__state": null,
+        "__zone_symbol__value": []
+      },
+      "nome": "Lucas",
+      "email": "lucasdec.felizardo@gmail.com",
+      "senha": "123",
+      "likes": [],
+      "inscricoes": []
     }
   ],
   "secao": [
@@ -166,6 +177,14 @@
         3,
         4
       ]
+    },
+    {
+      "id": 3,
+      "nome": "Lucas",
+      "email": "lucasdec.felizardo@gmail.com",
+      "senha": "123",
+      "likes": [],
+      "inscricoes": []
     }
   ]
 }

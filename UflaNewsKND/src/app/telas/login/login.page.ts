@@ -35,7 +35,6 @@ export class LoginPage implements OnInit {
       this.usuarios.setUsuarioLogadoId(this.usuario[0].id);
 
       if(this.usuario[0].senha == this.senha) {
-        console.log("LOGADO");
         this.router.navigate(['']);
       } else {
         this.mostrarErroValidacao = true;

@@ -1,14 +1,31 @@
 <div class="bgAzul">
-  <ion-icon class="voltar" [routerLink]="['']" name="arrow-round-back"></ion-icon>
+  <ion-icon class="voltar" [routerLink]="['/login']" name="arrow-round-back"></ion-icon>
 
-  <br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <ion-input class="caixaTexto" type="text" placeholder="Nome"></ion-input>
-  <ion-input class="caixaTexto" type="email" placeholder="Email"></ion-input>
-  <ion-input class="caixaTexto" type="password" placeholder="Senha"></ion-input>
-  <ion-input class="caixaTexto" type="password" placeholder="Confirmar Senha"></ion-input>
+  <br><br><br><br><br><br><br><br><br><br>
+ 
+  <ion-input [(ngModel)]="nome" class="caixaTexto" type="text" placeholder="Nome"></ion-input>
+  <ion-input [(ngModel)]="email" class="caixaTexto" type="email" placeholder="Email"></ion-input>
+  <ion-input [(ngModel)]="senha" class="caixaTexto" type="password" placeholder="Senha"></ion-input>
+  <ion-input [(ngModel)]="confirmarSenha" class="caixaTexto" type="password" placeholder="Confirmar Senha"></ion-input>
   
-  <p class="continuar">
-    Confirmar
-    <ion-icon name="checkmark"></ion-icon>
+  <div (click)="cadastrar()">
+    <p class="continuar">
+      Confirmar
+      <ion-icon name="checkmark"></ion-icon>
+    </p>
+  </div>
+
+  <br><br>
+
+  <p *ngIf="erroNome" class="aviso">
+    Nome já existe.
+  </p>
+
+  <p *ngIf="erroEmail" class="aviso">
+    Email já existe.
+  </p>
+  
+  <p  *ngIf="erroSenha" class="aviso">
+    Senhas não conferem.
   </p>
 </div>

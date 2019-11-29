@@ -17,8 +17,7 @@ const routes: Routes = [
   { path: 'alterar-email1', loadChildren: './telas/alterar-email1/alterar-email1.module#AlterarEmail1PageModule' },
   { path: 'alterar-email2', loadChildren: './telas/alterar-email2/alterar-email2.module#AlterarEmail2PageModule' },
   { path: 'login', loadChildren: './telas/login/login.module#LoginPageModule' },
-  { path: 'cadastroDados', loadChildren: './telas/cadastroDados/cadastroDados.module#CadastroDadosPageModule' },
-  { path: 'cadastroMensagem', loadChildren: './telas/cadastroMensagem/cadastroMensagem.module#CadastroMensagemPageModule' }
+  { path: 'cadastroDados', loadChildren: './telas/cadastroDados/cadastroDados.module#CadastroDadosPageModule' }
 ];
 @NgModule({
   imports: [
