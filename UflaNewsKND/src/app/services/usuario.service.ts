@@ -10,12 +10,18 @@ const API_URL: string = "http://localhost:3000";
 })
 export class ServicoUsuario {
 
-  usuario: ModeloUsuario;
   usuarioLogadoId: number = 1;
 
   constructor(public http: HttpClient) {
   }
+
+  setUsuarioLogadoId(id: number) {
+    this.usuarioLogadoId = id;
+  }
   
+  cadastrar(cadastrar: ModeloUsuario) {
+  }
+
   pegarInscricoes(id:number): Promise<number[]> {
     return this.http.get(`${API_URL}/usuario/${id}`).map(
       (item: ModeloUsuario) => {
@@ -27,6 +33,22 @@ export class ServicoUsuario {
   pegarPeloId(id: number): Promise<ModeloUsuario> {
     return this.http.get(`${API_URL}/usuario/${id}`).map(
       (item: ModeloUsuario) => {
+        return new ModeloUsuario(
+          item.id,
+          item.nome,
+          item.email,
+          item.senha,
+          item.likes,
+          item.inscricoes
+        );
+      }
+    ).toPromise();
+  }
+
+  pegarPeloEmail(email: string): Promise<ModeloUsuario> {
+    return this.http.get(`${API_URL}/usuario?email=${email}`).map(
+      (item: ModeloUsuario) => {
+        console.log(item.id);
         return new ModeloUsuario(
           item.id,
           item.nome,

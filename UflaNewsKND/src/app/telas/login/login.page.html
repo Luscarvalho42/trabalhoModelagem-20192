@@ -5,16 +5,23 @@
   
   <div class="divCartao centralizar">
   
-    <br><br><br><br><br><br>
-    <ion-input class="caixaTexto" type="Email" placeholder="Email"></ion-input>
-    <ion-input class="caixaTexto" type="Password" placeholder="Senha"></ion-input>
+    <br><br><br><br>
+
+    <div class="centralizar" *ngIf="mostrarErroValidacao">
+      <p class="aviso">
+        Email ou senha errado.<br>Por favor, tente novamente!
+      </p>
+    </div>
+
+    <ion-input class="caixaTexto" type="Email" placeholder="Email" [(ngModel)]="email"></ion-input>
+    <ion-input class="caixaTexto" type="Password" placeholder="Senha" [(ngModel)]="senha"></ion-input>
     <br>
     <div class="centralizar">
-      <ion-button [routerLink]="['/tabs']" fill="solid" shape="round" color="light">
+      <ion-button (click)="fazerLogin()" fill="solid" shape="round" color="light">
         Entrar
       </ion-button>
-      <br><br><br><br><br><br><br>
-      <ion-button [routerLink]="['/cadastro1']" fill="solid" shape="round" color="light">
+      <br><br><br><br>
+      <ion-button fill="solid" shape="round" color="light">
         Cadastrar
       </ion-button>
     </div>

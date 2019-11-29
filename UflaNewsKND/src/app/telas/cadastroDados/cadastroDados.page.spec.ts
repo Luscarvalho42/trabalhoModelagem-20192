@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Cadastro1Page } from './cadastro1.page';
+import { Cadastro1Page } from './cadastroDados.page';
 
 describe('Cadastro1Page', () => {
   let component: Cadastro1Page;

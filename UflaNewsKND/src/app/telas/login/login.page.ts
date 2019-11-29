@@ -10,10 +10,19 @@ import { ModeloUsuario } from 'src/app/model/usuario.model';
 
 export class LoginPage implements OnInit {
 
-  ngOnInit(): void {
+  mostrarErroValidacao: boolean;
+  email: string;
+  senha: string;
+  usuario: ModeloUsuario;
+  
+  constructor(public usuarios: ServicoUsuario) { }
+
+  async ngOnInit() {
+    this.usuario = await this.usuarios.pegarPeloEmail(this.email);
   }
 
-  usuariosCadastrados: ModeloUsuario[];
-
-  constructor(public usuarios: ServicoUsuario) { }
+  async fazerLogin() {
+    this.usuario = await this.usuarios.pegarPeloEmail(this.email);
+    console.log(this.usuario.nome);
+  }
 }

@@ -19,11 +19,9 @@ const routes: Routes = [
   { path: 'alterar-email1', loadChildren: './telas/alterar-email1/alterar-email1.module#AlterarEmail1PageModule' },
   { path: 'alterar-email2', loadChildren: './telas/alterar-email2/alterar-email2.module#AlterarEmail2PageModule' },
   { path: 'login', loadChildren: './telas/login/login.module#LoginPageModule' },
-  { path: 'cadastro1', loadChildren: './telas/cadastro1/cadastro1.module#Cadastro1PageModule' },
-  { path: 'cadastro2', loadChildren: './telas/cadastro2/cadastro2.module#Cadastro2PageModule' },
-  { path: 'cadastro3', loadChildren: './telas/cadastro3/cadastro3.module#Cadastro3PageModule' }
+  { path: 'cadastroDados', loadChildren: './telas/cadastroDados/cadastroDados.module#CadastroDadosPageModule' },
+  { path: 'cadastroMensagem', loadChildren: './telas/cadastroMensagem/cadastroMensagem.module#CadastroMensagemPageModule' }
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ModeloPublicador } from 'src/app/model/publicador.model';
-import { ServicoPublicador } from 'src/app/services/publicador.service';
-import { ModeloUsuario } from 'src/app/model/usuario.model';
-import { ServicoUsuario } from 'src/app/services/usuario.service';
-import { ModeloBoletim } from 'src/app/model/boletim.model';
-import { ServicoBoletim } from 'src/app/services/boletim.service';
 
 @Component({
   selector: 'app-inscricoes',
