@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'perfil',
@@ -38,7 +40,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: '',
+        path: 't',
         redirectTo: '/tabs/feed',
         pathMatch: 'full'
       }

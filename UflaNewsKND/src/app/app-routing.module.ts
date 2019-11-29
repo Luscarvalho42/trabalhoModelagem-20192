@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },
+  { path: '', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule) },
   { path: 'login', loadChildren: './telas/login/login.module#LoginPageModule' },
   { path: 'feed', loadChildren: './telas/feed/feed.module#FeedPageModule' },
   { path: 'perfil', loadChildren: './telas/perfil/perfil.module#PerfilPageModule' },
   { path: 'inscricoes', loadChildren: './telas/inscricoes/inscricoes.module#InscricoesPageModule' },
-  { path: 'boletim/:id', loadChildren: './telas/boletim/boletim.module#BoletimPageModule' },
+  { path: 'boletim/:id', canActivate: [AuthGuard], loadChildren: './telas/boletim/boletim.module#BoletimPageModule' },
   { path: 'publicador/:id', loadChildren: './telas/publicador/publicador.module#PublicadorPageModule' },
   { path: 'alterar-nome1', loadChildren: './telas/alterar-nome1/alterar-nome1.module#AlterarNome1PageModule' },
   { path: 'alterar-nome2', loadChildren: './telas/alterar-nome2/alterar-nome2.module#AlterarNome2PageModule' },

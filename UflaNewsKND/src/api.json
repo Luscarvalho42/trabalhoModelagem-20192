@@ -6,7 +6,7 @@
       "titulo": "Pesquisa utiliza casca de tomate para produzir embalagem antioxidante",
       "publicadoEm": "22/10/2019",
       "conteudo": "Na UFLA, diversos laboratórios de diferentes cursos têm buscado em fontes renováveis novas opções de embalagens biodegradáveis, sejam elas ativas, inteligentes ou blendas. Há mais de 13 anos, novas embalagens para alimentos têm sido alvo de diversas pesquisas no Laboratório de Embalagens do Departamento de Ciência dos Alimentos (DCA). Para a professora Soraia Vilela Borges, no futuro as embalagens  deverão ser as “blendas ou compósitos ativos e inteligentes”, ou seja, embalagens que trazem consigo diversas funções e materiais com propriedades antimicrobianas e resistência térmica, por exemplo.",
-      "likes": 42,
+      "likes": 43,
       "publicadorId": 1
     },
     {
@@ -51,6 +51,13 @@
       "usuario": "Pedro",
       "comentario": "Supimpa. Parabens aos envolvidos!",
       "data": "14/10/2019"
+    },
+    {
+      "id": 3,
+      "boletimId": 1,
+      "usuario": "Marvin",
+      "comentario": "Testando Marvin",
+      "data": "29/10/2019"
     }
   ],
   "secao": [
@@ -146,11 +153,13 @@
       ]
     },
     {
-      "id": 1,
+      "id": 2,
       "nome": "Marvin",
       "email": "douglas@dna.com",
       "senha": "Verdade42",
-      "likes": [],
+      "likes": [
+        1
+      ],
       "inscricoes": [
         1,
         2,
