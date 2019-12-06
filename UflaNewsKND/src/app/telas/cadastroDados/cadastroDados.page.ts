@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicoUsuario } from 'src/app/services/usuario.service';
 import { ModeloUsuario } from 'src/app/model/usuario.model';
 import { Router } from '@angular/router';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-cadastroDados',
@@ -16,40 +17,33 @@ export class CadastroDadosPage implements OnInit {
   confirmarSenha: string = "";
   usuario: ModeloUsuario[];
 
-  erroNome: boolean;
-  erroEmail: boolean;
-  erroSenha: boolean;
-
   constructor(
     public usuarios: ServicoUsuario,
-    public router: Router
+    public router: Router,
+    public toast: ToastService
   ) { }
 
   async ngOnInit() {
   }
 
   async cadastrar() {
-    this.erroEmail = false;
-    this.erroNome = false;
-    this.erroSenha = false;
-
     console.log("cadastrando");
     var cadastrar = true;
 
     this.usuario = await this.usuarios.pegarPeloNome(this.nome);
     if(this.usuario.length > 0) {
-      this.erroNome = true;
+      this.toast.mensagem("Esse nome já está em uso");
       cadastrar = false;
     }
 
     this.usuario = await this.usuarios.pegarPeloEmail(this.email);
     if(this.usuario.length > 0) {
-      this.erroEmail = true;
+      this.toast.mensagem("Esse email já está em uso");
       cadastrar = false;
     }
 
     if(this.senha != this.confirmarSenha) {
-      this.erroSenha = true;
+      this.toast.mensagem("A senha de confirmação não confere");
       cadastrar = false;
     }
 

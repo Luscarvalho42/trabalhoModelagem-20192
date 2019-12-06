@@ -12,14 +12,14 @@
   <ion-card class="branco cartaoUsuario">
     <br><br><br><br><br><br><br><br>
 
-    <ion-input class="caixaTexto" type="password" placeholder="Senha Atual"></ion-input>
-    <ion-input class="caixaTexto" type="password" placeholder="Nova Senha"></ion-input>
-    <ion-input class="caixaTexto" type="password" placeholder="Confirmar Nova Senha"></ion-input>
+    <ion-input class="caixaTexto" [(ngModel)]="senhaAtual" type="password" placeholder="Senha Atual"></ion-input>
+    <ion-input class="caixaTexto" [(ngModel)]="novaSenha" type="password" placeholder="Nova Senha"></ion-input>
+    <ion-input class="caixaTexto" [(ngModel)]="confirmacao" type="password" placeholder="Confirmar Nova Senha"></ion-input>
 
     <br><br><br><br><br><br>
 
     <div class="centralizar">
-      <ion-button [routerLink]="['/alterar-senha2']" fill="solid" shape="round" color="light">
+      <ion-button (click)="alterarSenha()" fill="solid" shape="round" color="light">
         Confirmar
       </ion-button>
     </div>

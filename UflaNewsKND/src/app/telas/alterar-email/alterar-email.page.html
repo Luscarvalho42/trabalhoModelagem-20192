@@ -7,20 +7,21 @@
 </ion-header>
 
 <ion-content>
-  <h1 class="tituloCartao">Alterar Nome</h1>
+  <h1 class="tituloCartao">Alterar Email</h1>
   <br>
   <ion-card class="branco cartaoUsuario">
     <br><br><br><br><br><br><br><br><br><br>
 
-    <ion-input class="caixaTexto" type="Email" placeholder="Seu Nome"></ion-input>
-    <ion-input class="caixaTexto" type="Password" placeholder="Senha"></ion-input>
+    <ion-input class="caixaTexto" [(ngModel)]="email" type="Email" placeholder="Novo Email"></ion-input>
+    <ion-input class="caixaTexto" [(ngModel)]="senha" type="Password" placeholder="Senha"></ion-input>
+
 
     <br><br><br><br><br><br><br>
 
     <div class="centralizar">
-      <ion-button [routerLink]="['/alterar-nome2']" fill="solid" shape="round" color="light">
+      <ion-button (click)="alterarEmail()" fill="solid" shape="round" color="light">
         Confirmar
       </ion-button>
     </div>
   </ion-card>
-  </ion-content>
+</ion-content>

@@ -24,7 +24,7 @@
       "titulo": "Novo edital do Proat",
       "publicadoEm": "24/10/2019",
       "conteudo": "O Setor de Bolsas Institucionais da Praec informa a publicação do Edital Complementar do Programa de Aprendizado Técnico – PROAT. Estão sendo ofertadas 50 vagas reservadas para estudantes em situação de vulnerabilidade socioeconômica.",
-      "likes": 28,
+      "likes": 29,
       "publicadorId": 2
     },
     {
@@ -33,7 +33,7 @@
       "titulo": "III Semana da Física",
       "publicadoEm": "24/08/2019",
       "conteudo": "O Departamento de Física (DFI - UFLA) tem a honra de informar que realizará a terceira edição da Semana da Física nos dias 12, 13 e 14 de novembro de 2019. Será uma excelente oportunidade de compartilhar ideias e experiências com cientistas de reconhecida competência. Pesquisadores conceituados de outras instituições brasileiras e da UFLA apresentarão suas mais recentes pesquisas em diversas áreas da Física básica e aplicada. As palestras, minicursos e comunicações orais são voltadas para discentes da graduação e da pós graduação. Além disso, o estudante poderá apresentar seu trabalho na sessão de pôsteres. As vagas são limitadas, corra e garanta já a sua inscrição.",
-      "likes": 17,
+      "likes": 18,
       "publicadorId": 4
     }
   ],
@@ -69,6 +69,13 @@
       "senha": "123",
       "likes": [],
       "inscricoes": []
+    },
+    {
+      "id": "[object Object]1",
+      "boletimId": 3,
+      "usuario": "lusca",
+      "comentario": "muito bom",
+      "data": "06/11/2019"
     }
   ],
   "secao": [
@@ -182,14 +189,15 @@
       "id": 3,
       "nome": "Lucas",
       "email": "l@gmail.com",
-      "senha": "123",
+      "senha": "456",
       "likes": [
+        3,
         1
       ],
       "inscricoes": [
-        1,
-        2,
-        3
+        4,
+        3,
+        2
       ]
     },
     {
@@ -200,6 +208,38 @@
       "likes": [],
       "inscricoes": [
         4
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "paulo",
+      "email": "paulo@paulo.com",
+      "senha": "123",
+      "likes": [
+        4
+      ],
+      "inscricoes": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "naoSei",
+      "email": "n@gmail.com",
+      "senha": "123",
+      "likes": [],
+      "inscricoes": []
+    },
+    {
+      "id": 7,
+      "nome": "Lusca",
+      "email": "lc@gmail.com",
+      "senha": "123",
+      "likes": [],
+      "inscricoes": [
+        2,
+        3
       ]
     }
   ]

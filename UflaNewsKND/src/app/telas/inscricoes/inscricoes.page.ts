@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ModeloPublicador } from 'src/app/model/publicador.model';
 import { ServicoUsuario } from 'src/app/services/usuario.service';
 import { ServicoPublicador } from 'src/app/services/publicador.service';
-import { LoadingController } from '@ionic/angular/dist/providers/loading-controller';
 
 @Component({
   selector: 'app-inscricoes',
@@ -15,7 +14,7 @@ export class InscricoesPage implements OnInit {
   }
 
   listaPublicadoresInscritos: ModeloPublicador[];
-  listaOutrosPublicadores: ModeloPublicador[];
+  listaTodosPublicadores: ModeloPublicador[];
   listaInscricoes: number[];
 
   constructor(
@@ -24,29 +23,29 @@ export class InscricoesPage implements OnInit {
   ) {}
 
   async ionViewDidEnter() {
-    this.listaOutrosPublicadores = [];
-    this.listaPublicadoresInscritos  = [];
+    await this.delay(100);
     this.incricoes();
-    this.outros();
+    this.todos();
   }
   
   async incricoes() {
+    this.listaInscricoes = [];
+    this.listaPublicadoresInscritos = [];
     this.listaInscricoes = await this.usuarios.pegarInscricoes(this.usuarios.getId());
 
     for(let i = 0; i < this.listaInscricoes.length; i++) {
-      var publicador = await this.publicadores.pegarPeloId(this.listaInscricoes[i])
+      var publicador = await this.publicadores.pegarPeloId(this.listaInscricoes[i]);
       this.listaPublicadoresInscritos.unshift(publicador);
     }
   }
 
-  async outros() {
+  async todos() {
+    this.listaTodosPublicadores = [];
     var todos = await this.publicadores.pegarIdTodos();
 
     for(let i = 0; i < todos.length; i++) {
-      if(this.listaInscricoes.indexOf(todos[i]) == -1) {
-        var publicador = await this.publicadores.pegarPeloId(todos[i]);
-        this.listaOutrosPublicadores.unshift(publicador);
-      }
+      var publicador = await this.publicadores.pegarPeloId(todos[i]);
+      this.listaTodosPublicadores.unshift(publicador);
     }
   }
 
@@ -54,14 +53,22 @@ export class InscricoesPage implements OnInit {
     var index = this.listaInscricoes.indexOf(id);
     this.listaInscricoes.splice(index, 1);
     this.usuarios.atualizarInscricoes(this.listaInscricoes);
-    this.ionViewDidEnter();
-    
   }
 
   inscrever(id:number) {
     this.listaInscricoes.unshift(id);
     this.usuarios.atualizarInscricoes(this.listaInscricoes);
-    this.ionViewDidEnter();
   }
 
+  inscrito(id: number): boolean {
+    if(this.listaInscricoes.indexOf(id) == -1) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
 }

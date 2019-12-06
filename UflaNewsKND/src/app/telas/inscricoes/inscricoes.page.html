@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="cartao" *ngFor="let p of listaPublicadoresInscritos">
+  <ion-card class="cartao" *ngFor="let p of listaTodosPublicadores">
     <ion-grid>
       <ion-row class="ion-align-self-center">
         <ion-col size="2" class="centralizar" [routerLink]="['/publicador', p.id]">
@@ -16,33 +16,15 @@
             {{p.nome}}
           </ion-title>
         </ion-col>
-        <ion-col size="3" class="centralizer">
-          <ion-button (click)="cancelarInscricao(p.id)" class="txtC">
-            Inscrito
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
 
-  <br><br>
+        <ion-col size="2" class="centralizer" *ngIf="inscrito(p.id) == true">
+          <ion-toggle checked (click)="cancelarInscricao(p.id)" color="primary"></ion-toggle>
+        </ion-col>
 
-  <ion-card class="cartao" *ngFor="let o of listaOutrosPublicadores">
-    <ion-grid>
-      <ion-row class="ion-align-self-center">
-        <ion-col size="2" class="centralizar" [routerLink]="['/publicador', o.id]">
-          <img src="{{o.foto}}" class="imgIcone" >
+        <ion-col size="2" class="centralizer" *ngIf="inscrito(p.id) == false">
+          <ion-toggle (click)="inscrever(p.id)" color="primary"></ion-toggle>
         </ion-col>
-        <ion-col size="6" class="centralizar" [routerLink]="['/publicador', o.id]">
-          <ion-title>
-            {{o.nome}}
-          </ion-title>
-        </ion-col>
-        <ion-col size="4" class="centralizer">
-          <ion-button color="medium" (click)="inscrever(o.id)" class="txtC">
-            Inscrever
-          </ion-button>
-        </ion-col>
+
       </ion-row>
     </ion-grid>
   </ion-card>

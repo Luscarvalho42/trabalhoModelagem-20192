@@ -177,4 +177,25 @@ export class ServicoUsuario {
     
     this.http.patch(`${API_URL}/usuario/${this.getId()}`, dados).toPromise();
   }
+
+  async atualizarNome(nome: string) {
+    const dados: any = {
+      nome: nome
+    }
+    this.http.patch(`${API_URL}/usuario/${this.getId()}`, dados).toPromise();
+  }
+  
+  async atualizarSenha(senha: string) {
+    const dados: any = {
+      senha: senha
+    }
+    this.http.patch(`${API_URL}/usuario/${this.getId()}`, dados).toPromise();
+  }
+  
+  async atualizarEmail(email: string) {
+    const dados: any = {
+      email: email
+    }
+    this.http.patch(`${API_URL}/usuario/${this.getId()}`, dados).toPromise();
+  }
 }
