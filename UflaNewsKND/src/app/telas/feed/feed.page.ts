@@ -5,6 +5,7 @@ import { ModeloPublicador } from 'src/app/model/publicador.model';
 import { ServicoPublicador } from 'src/app/services/publicador.service';
 import { ServicoUsuario } from 'src/app/services/usuario.service';
 
+
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.page.html',
@@ -49,7 +50,6 @@ export class FeedPage implements OnInit {
 
   ngOnInit() {
   }
-
 }
 
 

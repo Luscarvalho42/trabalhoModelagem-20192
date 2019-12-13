@@ -37,6 +37,8 @@ export class LoginPage implements OnInit {
 
       if(this.usuario[0].senha == this.senha) {
         this.router.navigate(['']);
+      } else {      
+        this.toast.mensagem("Credenciais inválidas");
       }
     }
   }

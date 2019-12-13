@@ -15,7 +15,7 @@
       "titulo": "Abertas as inscrições para equipe de aplicação do PAS",
       "publicadoEm": "24/10/2019",
       "conteudo": "A Diretoria de Processos Seletivos da Universidade Federal de Lavras (Dips/UFLA) comunica que já estão abertas as inscrições para interessados em aplicar as provas do Processo de Avaliação Seriada (PAS 2019/UFLA). A aplicação ocorrerá nos dias 23/11 e 24/11",
-      "likes": 65,
+      "likes": 66,
       "publicadorId": 1
     },
     {
@@ -24,7 +24,7 @@
       "titulo": "Novo edital do Proat",
       "publicadoEm": "24/10/2019",
       "conteudo": "O Setor de Bolsas Institucionais da Praec informa a publicação do Edital Complementar do Programa de Aprendizado Técnico – PROAT. Estão sendo ofertadas 50 vagas reservadas para estudantes em situação de vulnerabilidade socioeconômica.",
-      "likes": 29,
+      "likes": 30,
       "publicadorId": 2
     },
     {
@@ -76,6 +76,13 @@
       "usuario": "lusca",
       "comentario": "muito bom",
       "data": "06/11/2019"
+    },
+    {
+      "id": "[object Object]11",
+      "boletimId": 3,
+      "usuario": "UltimoTeste",
+      "comentario": "Teste final de comentario",
+      "data": "13/11/2019"
     }
   ],
   "secao": [
@@ -195,9 +202,10 @@
         1
       ],
       "inscricoes": [
+        2,
+        1,
         4,
-        3,
-        2
+        3
       ]
     },
     {
@@ -240,6 +248,22 @@
       "inscricoes": [
         2,
         3
+      ]
+    },
+    {
+      "id": 8,
+      "nome": "UltimoTeste",
+      "email": "alterandoEmail@gmail.com",
+      "senha": "124578",
+      "likes": [
+        3,
+        2
+      ],
+      "inscricoes": [
+        4,
+        3,
+        1,
+        2
       ]
     }
   ]
